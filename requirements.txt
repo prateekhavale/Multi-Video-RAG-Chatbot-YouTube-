@@ -1,0 +1,10 @@
+streamlit
+youtube-transcript-api
+sentence-transformers
+rank-bm25
+faiss-cpu
+langchain
+langchain-community
+langchain-huggingface
+requests
+python-dotenv
