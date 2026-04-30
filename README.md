@@ -58,26 +58,37 @@ Built using **Hybrid Retrieval (FAISS + BM25)**, **Reranking**, and **LLMs**.
 
 ```
 
-YouTube Video
-    ↓ 
-Transcript Extraction
-    ↓ 
-Semantic Chunking
-    ↓ 
-Node Creation + Graph 
-    ↓ 
-Hybrid Retrieval (FAISS + BM25) 
-    ↓ 
-Reranking (CrossEncoder) 
-    ↓ 
-Graph Expansion 
-    ↓ 
-Context Builder 
-    ↓ 
-LLM (OpenRouter) 
-    ↓ 
-Final Answer
-
+video url
+   ↓
+extract video id
+   ↓
+fetch transcript
+   ↓
+normalize timestamps
+   ↓
+semantic chunking
+   ↓
+token control
+   ↓
+node creation
+   ↓
+metadata enrichment
+   ↓
+ ┌───────────────┬───────────────┐
+ │ vector index  │ BM25 index    │
+ └──────┬────────┴──────┬────────┘
+        ↓               ↓
+   semantic search   keyword search
+        ↓               ↓
+        └────── merge ──────┘
+                ↓
+            reranking
+                ↓
+        context compression
+                ↓
+             LLM answer
+                ↓
+             memory update
 ```
 
 ---
